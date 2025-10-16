@@ -50,28 +50,30 @@
         return;
       }
 
+      // Kirim data ke Google Sheets
       fetch("https://script.google.com/macros/s/AKfycbwQ08ucBO29ECeXCWnCId_hJLrtHsMIQcWDSuOQT8YG9tb9LT-NhDfyZERSgthlMh0A/exec", {
         method: "POST",
         body: JSON.stringify({ nama, paket, kelas, jurusan }),
         headers: { "Content-Type": "application/json" }
       });
 
+      // Arahkan ke folder soal
       const folderMap = {
-        "A-4": "https://drive.google.com/drive/folders/1gz1JCoUcsfnEBquD8Jhvk-xfhaO7AwYj",
-        "A-5": "https://drive.google.com/drive/folders/1Mla_WbuSFj_S9XMMWpnUlGW1VdNUhOgW",
-        "A-6": "https://drive.google.com/drive/folders/1RpW1UCG-TrS76kq_gkY614nJvWZTAt1r",
-        "B-7": "https://drive.google.com/drive/folders/1yOiem5ArNQQvMlbNIEXP2dqasfR03GSw",
-        "B-8": "https://drive.google.com/drive/folders/1_M_nxHoe8la4k-udo5ZV0nD4iNBXSUAx",
-        "B-9": "https://drive.google.com/drive/folders/16tsOe5RRgGMlIzNJRFeVfW5Dpb9WFq3u",
-        "C-10 IPS": "https://drive.google.com/drive/folders/1EOydA3f4iyaAmHZRfkYjJM-TjQ4UMAXX",
-        "C-10 IPA": "https://drive.google.com/drive/folders/15EnxsFL52KdnctLrn1Wk-KnPxJRGuVgF",
-        "C-11 IPS": "https://drive.google.com/drive/folders/11J3KL1H-MZvSxOUIlCoE9JWyRpsedoN3",
-        "C-11 IPA": "https://drive.google.com/drive/folders/1ryXV8AGe4MxqGolS24byJXYA4ud1HB-X",
-        "C-12 IPS": "https://drive.google.com/drive/folders/1cX8oLt1OvHGqD7cx3VpkwUCrdpqCqpZm",
-        "C-12 IPA": "https://drive.google.com/drive/folders/1o-wfDN0AmVD_W0l4ndy83qc2A0kyBxg2"
+        "Kelas 4": "https://drive.google.com/drive/folders/1gz1JCoUcsfnEBquD8Jhvk-xfhaO7AwYj",
+        "Kelas 5": "https://drive.google.com/drive/folders/1Mla_WbuSFj_S9XMMWpnUlGW1VdNUhOgW",
+        "Kelas 6": "https://drive.google.com/drive/folders/1RpW1UCG-TrS76kq_gkY614nJvWZTAt1r",
+        "Kelas 7": "https://drive.google.com/drive/folders/1yOiem5ArNQQvMlbNIEXP2dqasfR03GSw",
+        "Kelas 8": "https://drive.google.com/drive/folders/1_M_nxHoe8la4k-udo5ZV0nD4iNBXSUAx",
+        "Kelas 9": "https://drive.google.com/drive/folders/16tsOe5RRgGMlIzNJRFeVfW5Dpb9WFq3u",
+        "Kelas 10 IPA": "https://drive.google.com/drive/folders/15EnxsFL52KdnctLrn1Wk-KnPxJRGuVgF",
+        "Kelas 10 IPS": "https://drive.google.com/drive/folders/1EOydA3f4iyaAmHZRfkYjJM-TjQ4UMAXX",
+        "Kelas 11 IPA": "https://drive.google.com/drive/folders/1ryXV8AGe4MxqGolS24byJXYA4ud1HB-X",
+        "Kelas 11 IPS": "https://drive.google.com/drive/folders/11J3KL1H-MZvSxOUIlCoE9JWyRpsedoN3",
+        "Kelas 12 IPA": "https://drive.google.com/drive/folders/1o-wfDN0AmVD_W0l4ndy83qc2A0kyBxg2",
+        "Kelas 12 IPS": "https://drive.google.com/drive/folders/1cX8oLt1OvHGqD7cx3VpkwUCrdpqCqpZm"
       };
 
-      const key = `${paket}-${kelas}`;
+      const key = `Kelas ${kelas}`;
       const linkSoal = folderMap[key];
 
       if (linkSoal) {
@@ -83,4 +85,3 @@
   </script>
 </body>
 </html>
-
